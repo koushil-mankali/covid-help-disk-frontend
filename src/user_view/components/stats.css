@@ -1,0 +1,52 @@
+.statBox{
+  width:50%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats {
+  /* width: 40vw;
+  height: 50px; */
+  margin: 10px 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d8e2dc;
+  border-radius: 5px 5px 0 0;
+}
+.title {
+  font-size: 1.2rem;
+}
+.date {
+  margin: 10px;
+  font-size: 0.9rem;
+}
+.statsBdy {
+  width: 40vw;
+  height: auto;
+  margin: 0 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid #eee;
+}
+
+.statsBdyRow {
+  height: auto;
+  width: 100%;
+}
+.statsRow {
+  margin: 10px;
+  width: 100%;
+}
+.statsTitle {
+  font-weight: 400;
+}
+
+.statsCount {
+  font-size: 1.4rem;
+}
+
+

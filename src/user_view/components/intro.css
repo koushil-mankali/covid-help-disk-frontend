@@ -1,0 +1,18 @@
+.intro {
+  width: 50%;
+  height: 200px;
+  margin: 10px;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.introbtn {
+  width: 100px;
+  margin: 10px;
+  border-radius: 5px;
+}

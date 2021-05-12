@@ -1,0 +1,31 @@
+.navbar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #eee;
+}
+
+.title {
+  display: inline;
+  margin: 25px;
+  color: #264653;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.active {
+  border-bottom: 2px solid green;
+}
+
+.navlinks {
+  margin: 25px;
+}
+
+.navbarLi {
+  margin: 0 10px;
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}

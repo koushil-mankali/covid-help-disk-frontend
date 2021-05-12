@@ -1,0 +1,84 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.hospitalList {
+  width: 100%;
+  height: auto;
+}
+
+.introTab {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+.filtersTab {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+}
+
+.btnHost {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.tableBox {
+  width: 100vw;
+  height: auto;
+  padding: 20px;
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+  white-space: nowrap;
+  border: 1px solid black;
+  background-color: chartreuse;
+  border-collapse: collapse;
+}
+
+.table tr th {
+  border: 1px solid black;
+}
+
+
+.table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid black;
+}
+
+.row {
+  width: 33.3%;
+  padding: 5px;
+}
+
+.trr {
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+.hhsttl1,
+.hhsttl2,
+.hhsttl3 {
+  width: 100%;
+  padding: 5px;
+}
+
+.tbb{
+    width: 100%;
+    padding: 5px;
+}

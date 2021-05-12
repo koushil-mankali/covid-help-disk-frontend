@@ -1,0 +1,30 @@
+.BedsStats {
+  margin: 10px;
+  height: auto;
+}
+.ouuterBox {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  border-radius: 10px;
+  border: 2px solid #eee;
+}
+.innerBox1 {
+  padding: 10px;
+  display: flex;
+  border-radius: 10px 10px 0px 0px;
+  justify-content: space-around;
+  background-color: red;
+}
+
+.innerBox2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px;
+  font-size: 1.4rem;
+}
+
+.innerBox2 div p {
+  margin: 10px;
+}

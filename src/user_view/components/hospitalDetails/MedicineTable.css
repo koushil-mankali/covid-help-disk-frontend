@@ -1,0 +1,36 @@
+.tableBox {
+  width: 100vw;
+  height: auto;
+  padding: 20px;
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+  white-space: nowrap;
+  border: 1px solid black;
+  background-color: chartreuse;
+  border-collapse: collapse;
+}
+
+.table tr th {
+  padding:10px;
+  border: 1px solid black;
+}
+
+.table td {
+  padding:5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid black;
+}
+
+.row {
+  width: 33.3%;
+  padding: 5px;
+}
+
+.btab {
+  text-align: center;
+}

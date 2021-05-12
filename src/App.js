@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from "react-router-dom";
 
-function App() {
+import HospitalList from "./user_view/components/hospitalsList/HospitalList";
+import HospitalDetails from "./user_view/components/hospitalDetails/HospitalDetails";
+import Beds from "./user_view/components/beds/Beds";
+import UserView from "./user_view/index";
+import "./App.css";
+
+let App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Switch>
+        <Route path="/" exact>
+          <UserView />
+        </Route>
+        <Route path="/beds" exact>
+          <Beds />
+        </Route>
+        <Route path="/hospital-list" exact>
+          <HospitalList />
+        </Route>
+        <Route path="/hospital-details" exact>
+          <HospitalDetails />
+        </Route>
+      </Switch>
+    </>
   );
-}
+};
 
 export default App;
