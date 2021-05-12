@@ -14,15 +14,17 @@
   display: flex;
   border-radius: 10px 10px 0px 0px;
   justify-content: space-around;
-  background-color: red;
+  background-color: #e63946;
 }
 
 .innerBox2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 10px;
+  padding: 10px;
   font-size: 1.4rem;
+  border-radius: 0px 0px 10px 10px;
+  background-color: cornsilk;
 }
 
 .innerBox2 div p {

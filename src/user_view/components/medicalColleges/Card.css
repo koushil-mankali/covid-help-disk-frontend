@@ -1,0 +1,26 @@
+.cardState {
+    min-width: 250px;
+    min-height: 200px;
+    max-width: 300px;
+    height: auto;
+    margin: 20px;
+    background-color: #48cae4;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    color: #000000;
+  }
+  .cardTtl {
+    padding: 5px;
+    font-size: 2rem;
+    border-radius: 10px 10px 0 0;
+    background-color: coral;
+  }
+  
+  .cardBdy {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+  
+  .cardP{
+    margin:5px 0;
+  }

@@ -12,11 +12,12 @@ let Navbar = () => {
         <NavLink to="/beds" activeClassName="active" className="navbarLi">
           Beds
         </NavLink>
-        <NavLink to="/oxygen" activeClassName="active" className="navbarLi">
-          Oxygen
-        </NavLink>
-        <NavLink to="/medicine" activeClassName="active" className="navbarLi">
-          Medicine
+        <NavLink
+          to="/medical-colleges"
+          activeClassName="active"
+          className="navbarLi"
+        >
+          Medical Colleges
         </NavLink>
       </div>
     </div>

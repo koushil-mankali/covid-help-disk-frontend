@@ -1,4 +1,5 @@
 import Navbar from "../Navbar";
+import Footer from "../Footer";
 import Button from "../../../UI/Button";
 
 import "./HospitalList.css";
@@ -57,6 +58,7 @@ let HospitalList = () => {
           </table>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

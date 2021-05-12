@@ -1,0 +1,14 @@
+.stateData {
+    width: 100%;
+  }
+  .statesTtl {
+    font-size: 2rem;
+    margin: 10px;
+  }
+  
+  .statesBdy {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  

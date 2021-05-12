@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Intro from "./components/Intro";
 import Stats from "./components/Stats";
 import AddHospital from "./components/AddHospital";
@@ -8,7 +9,7 @@ import "./index.css";
 
 let UserView = () => {
   return (
-    <>
+    <div className="main">
       <Navbar />
       <div className="box1">
         <Intro />
@@ -20,7 +21,10 @@ let UserView = () => {
       <div className="searchForms">
         <SearchBox />
       </div>
-    </>
+      <div className="foo">
+        <Footer />
+      </div>
+    </div>
   );
 };
 

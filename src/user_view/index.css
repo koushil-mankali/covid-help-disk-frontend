@@ -8,6 +8,13 @@ body {
   background-color: #fefefe;
 }
 
+.foo {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
 .linkdiss {
   text-decoration: none;
   color: whitesmoke;

@@ -1,32 +1,9 @@
-import { useState, useEffect } from "react";
-
 import Loader from "../../../UI/Loader";
 import "./BedsStats.css";
 
-let BedsStats = () => {
-  let [state, setState] = useState();
-  let [loader, setLoader] = useState(true);
-
-  useEffect(() => {
-    setLoader(true);
-    fetch("https://api.rootnet.in/covid19-in/hospitals/beds")
-      .then((result) => result.json())
-      .then((result) => {
-        console.log(result);
-        if (result.success) {
-          let date = result.lastRefreshed;
-          date = new Date(date);
-          let dateString = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
-          let regions = result.data.summary;
-          setState({ dateString, regions });
-        }
-        setLoader(false);
-      })
-      .catch((err) => {
-        setLoader(false);
-        console.log(err);
-      });
-  }, []);
+let BedsStats = (props) => {
+  let loader = props.loader;
+  let state = props.state;
 
   return (
     <div className="BedsStats">

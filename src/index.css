@@ -2,8 +2,11 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  position: relative;
 }
+html,
 body {
+  height: 100%;
   font-family: "Recursive", sans-serif;
 }
 

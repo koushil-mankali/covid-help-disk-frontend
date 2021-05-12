@@ -1,4 +1,5 @@
 import Navbar from "../Navbar";
+import Footer from "../Footer";
 import Card from "./Card";
 import IntroBox from "./IntroBox";
 import MedicineTable from "./MedicineTable";
@@ -12,6 +13,7 @@ let HospitalDetails = () => {
       <IntroBox />
       <Card />
       <MedicineTable />
+      <Footer />
     </>
   );
 };
