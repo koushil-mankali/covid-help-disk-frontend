@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import "./form.css";
 
-let Form1 = () => {
-  let [state, setState] = useState("");
-  let [district, setDistrict] = useState("");
+let Form2 = (props) => {
+  let history = useHistory();
+
+  let [state, setState] = useState();
+  let [district, setDistrict] = useState();
+  let [districtData, setDistrictData] = useState();
+  let [isLoading, setLoading] = useState(true);
 
   let handleState = (e) => {
     setState(e.target.value);
@@ -13,13 +18,37 @@ let Form1 = () => {
     setDistrict(e.target.value);
   };
 
-  let hospitalNameHandler = async (e) => {
-    e.preventDefault();
-    try {
-      const result = await fetch("");
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    setLoading(true);
+    if (state) {
+      fetch("http://localhost:4000/get-districts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          state: state,
+        }),
+      })
+        .then((result) => result.json())
+        .then((result) => {
+          setDistrictData(result);
+          setLoading(false);
+        })
+        .catch((err) => {
+          setLoading(false);
+          console.log(err);
+        });
     }
+  }, [state]);
+
+  let hospitalNameHandler = (e) => {
+    e.preventDefault();
+
+    history.push({
+      pathname: "/hospital-list",
+      data: { state, district },
+    });
   };
 
   return (
@@ -35,7 +64,15 @@ let Form1 = () => {
             name="sname"
           >
             <option value="">Select</option>
-            <option value="option">Option</option>
+            {props.loader ? (
+              <option>Loading...</option>
+            ) : (
+              props?.stateNames?.map((value) => (
+                <option value={value} key={value}>
+                  {value}
+                </option>
+              ))
+            )}
           </select>
         </label>
         <label htmlFor="dname">
@@ -48,7 +85,15 @@ let Form1 = () => {
             name="dname"
           >
             <option value="">Select</option>
-            <option value="option">Option</option>
+            {isLoading ? (
+              <option>Loading...</option>
+            ) : (
+              districtData.map((val) => (
+                <option value={val} key={val}>
+                  {val}
+                </option>
+              ))
+            )}
           </select>
         </label>
       </div>
@@ -59,4 +104,4 @@ let Form1 = () => {
   );
 };
 
-export default Form1;
+export default Form2;

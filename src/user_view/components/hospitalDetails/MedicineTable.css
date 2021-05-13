@@ -5,6 +5,7 @@
 }
 
 .table {
+  margin-bottom: 100px;
   table-layout: fixed;
   width: 100%;
   white-space: nowrap;
@@ -14,12 +15,12 @@
 }
 
 .table tr th {
-  padding:10px;
+  padding: 10px;
   border: 1px solid black;
 }
 
 .table td {
-  padding:5px;
+  padding: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

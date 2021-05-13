@@ -1,25 +1,106 @@
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Button from "../../../UI/Button";
+import Loader from "../../../UI/Loader";
 
 import "./HospitalList.css";
 
-let HospitalList = () => {
-  let filterHandlerGovt = (e) => {};
+let HospitalList = (props) => {
+  const location = useLocation();
 
-  let filterHandlerPrivate = (e) => {};
+  let [data, setData] = useState();
+  let [isLoading, setLoading] = useState(true);
+
+  let state = location?.data?.state;
+  let district = location?.data?.district;
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("http://localhost:4000/get-hospital-data", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        state: state,
+        district: district,
+      }),
+    })
+      .then((result) => result.json())
+      .then((result) => {
+        setData(result);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err);
+      });
+  }, [state, district]);
+
+  let filterHandlerGovt = (e) => {
+    setLoading(true);
+    fetch("http://localhost:4000/filter-data", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        state: state,
+        district: district,
+        data: "govt",
+      }),
+    })
+      .then((result) => result.json())
+      .then((result) => {
+        setData(result);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err);
+      });
+  };
+
+  let filterHandlerPrivate = (e) => {
+    setLoading(true);
+    fetch("http://localhost:4000/filter-data", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        state: state,
+        district: district,
+        data: "private",
+      }),
+    })
+      .then((result) => result.json())
+      .then((result) => {
+        setData(result);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.log(err);
+      });
+    setLoading(false);
+  };
 
   return (
-    <>
+    <div className="main">
       <Navbar />
       <div className="hospitalList">
         <p className="introTab">
-          Details of Hospitals in {"State"} state {"District"} district
+          Details of Hospitals in {state} state &nbsp;
+          {district} district
         </p>
         <div className="filtersTab">
           <div></div>
           <div className="filters">
-            Filters: &nbsp;{" "}
+            Filters: &nbsp;
             <Button onClick={filterHandlerGovt} className="btnHost">
               Govt
             </Button>
@@ -45,21 +126,29 @@ let HospitalList = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="btab">
-                <td>Sharada</td>
-                <tr className="trr">
-                  <td className="tbb">20</td>
-                  <td className="tbb">18</td>
-                  <td className="tbb">2</td>
-                </tr>
-                <td>avaliable</td>
-              </tr>
+              {isLoading ? (
+                <Loader />
+              ) : (
+                data.map((value) => (
+                  <tr className="btab">
+                    <td>{value.hospitalName}</td>
+                    <tr className="trr">
+                      <td className="tbb">{value.totalBeds}</td>
+                      <td className="tbb">{value.occupiedBeds}</td>
+                      <td className="tbb">{value.avaliableBeds}</td>
+                    </tr>
+                    <td>{value.oxygen}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
       </div>
-      <Footer />
-    </>
+      <div className="foo">
+        <Footer />
+      </div>
+    </div>
   );
 };
 

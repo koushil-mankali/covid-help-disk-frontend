@@ -7,6 +7,16 @@
   border-bottom: 2px solid #eee;
 }
 
+.menuBar {
+  width: 35px;
+  height: 25px;
+  display: none;
+}
+.menubarImage {
+  width: 100%;
+  height: 100%;
+}
+
 .title {
   display: inline;
   margin: 25px;
@@ -28,4 +38,45 @@
   color: red;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .navlinks {
+    display: none;
+  }
+  .cttl {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 0 10px;
+  }
+  .menuBar {
+    width: 35px;
+    height: 25px;
+    display: block;
+  }
+  .menubarImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .heightP {
+    height: 120px;
+  }
+
+  .displayT {
+    display: block !important;
+  }
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #eee;
+  }
 }

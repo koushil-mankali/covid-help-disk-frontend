@@ -1,8 +1,46 @@
-.h2{
-    margin:10px 0;
+.h2 {
+  width: 100%;
+  margin: 10px 0;
 }
 
-.searchComps{
+.searchComps {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .h2 {
+    margin: 20px 0;
+  }
+  .searchComps {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .searchComps {
+    margin-bottom: 100px;
+  }
+  /* CSS */
+}
+
+@media (min-width: 100px) and (max-width: 767px) {
+  .h2 {
+    margin: 20px 0;
+  }
+  .searchComps {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+  }
 }

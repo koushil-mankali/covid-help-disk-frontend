@@ -42,46 +42,42 @@ let Stats = () => {
   }, []);
 
   return (
-    <div className='statBox'>
+    <div className="statBox">
       {loader ? (
-        <div className='centered'>
+        <div className="centered">
           <Loader />
         </div>
       ) : (
         <div>
           <div className="stats">
             <p className="title">Stats</p>
-            <p className="date">{state ? state.dateString : ""}</p>
+            <p className="date">{state?.dateString}</p>
           </div>
           <div className="statsBdy">
             <div className="statsBdyRow">
               <div className="statsRow">
                 <p className="statsTitle"> Total Cases: </p>
-                <p className="statsCount">{state ? state.totalCases : ""}</p>
+                <p className="statsCount">{state?.totalCases}</p>
               </div>
               <div className="statsRow">
                 <p className="statsTitle"> Confirmed Cases: </p>
-                <p className="statsCount">
-                  {state ? state.ConfirmedCases : ""}
-                </p>
+                <p className="statsCount">{state?.ConfirmedCases}</p>
               </div>
             </div>
             <div className="statsBdyRow">
               <div className="statsRow">
                 <p className="statsTitle"> Discharged: </p>
-                <p className="statsCount">{state ? state.discharged : ""}</p>
+                <p className="statsCount">{state?.discharged}</p>
               </div>
               <div className="statsRow">
                 <p className="statsTitle"> Deaths: </p>
-                <p className="statsCount">{state ? state.deaths : ""}</p>
+                <p className="statsCount">{state?.deaths}</p>
               </div>
             </div>
             <div className="statsBdyRow">
               <div className="statsRow">
                 <p className="statsTitle"> Confirmed Foreign Cases: </p>
-                <p className="statsCount">
-                  {state ? state.ConfirmedCasesForeign : ""}
-                </p>
+                <p className="statsCount">{state?.ConfirmedCasesForeign}</p>
               </div>
             </div>
           </div>

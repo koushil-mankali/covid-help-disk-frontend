@@ -1,14 +1,32 @@
 .stateData {
-    width: 100%;
-  }
-  .statesTtl {
-    font-size: 2rem;
-    margin: 10px;
-  }
-  
-  .statesBdy {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 100px;
+  background-color: cornflowerblue;
+}
+.statesTtl {
+  font-size: 2rem;
+  margin: 10px;
+}
+
+.statesBdy {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stateSelection {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectInput {
+  padding: 5px;
+  font-size: 1rem;
+  outline: none;
+}

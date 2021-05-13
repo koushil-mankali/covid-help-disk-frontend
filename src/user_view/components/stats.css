@@ -1,14 +1,12 @@
-.statBox{
-  width:50%;
-  height:100%;
+.statBox {
+  width: 50%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .stats {
-  /* width: 40vw;
-  height: 50px; */
   margin: 10px 10px 0 10px;
   display: flex;
   justify-content: space-between;
@@ -49,4 +47,45 @@
   font-size: 1.4rem;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .statBox {
+    width: 80%;
+  }
 
+  .statsBdy {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .statBox {
+    width: 80%;
+  }
+  .statsBdy {
+    width: 80vw;
+  }
+}
+@media (min-width: 100px) and (max-width: 480px) {
+  .statBox {
+    width: 90%;
+  }
+  .statsBdy {
+    width: 90vw;
+    height: 180px;
+  }
+}
+@media (min-width: 100px) and (max-width: 380px) {
+  .statBox {
+    width: 90%;
+  }
+  .statsBdy {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    height: 320px;
+  }
+}

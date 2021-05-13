@@ -1,31 +1,17 @@
-import Card from "./Card";
-import Loader from "../../../UI/Loader";
+import "./Card.css";
 
-import "./StatesData.css";
-
-let StatesData = (props) => {
+let Card = (props) => {
   return (
-    <div className="stateData">
-      <div className="statesTtl">States Data:</div>
-      <div className="statesBdy">
-        {props?.loader ? (
-          <Loader />
-        ) : (
-          props.regional?.map((value) => (
-            <Card
-              state={value.state}
-              ruralHospitals={value.ruralHospitals}
-              ruralBeds={value.ruralBeds}
-              urbanHospitals={value.urbanHospitals}
-              urbanBeds={value.urbanBeds}
-              totalHospitals={value.totalHospitals}
-              totalBeds={value.totalBeds}
-            />
-          ))
-        )}
+    <div className="cardState">
+      <div className="cardTtl">{props?.name}</div>
+      <div className="cardBdy">
+        <p className="cardP">City : {props?.city}</p>
+        <p className="cardP">Type : {props?.ownership}</p>
+        <p className="cardP">Admission Capacity : {props?.admissionCapacity}</p>
+        <p className="cardP">Hospital Beds : {props?.hospitalBeds}</p>
       </div>
     </div>
   );
 };
 
-export default StatesData;
+export default Card;

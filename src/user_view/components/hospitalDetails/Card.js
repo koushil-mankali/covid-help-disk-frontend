@@ -1,14 +1,18 @@
 import "./card.css";
 
-let Card = () => {
-  return (
-    <div className="card">
-      <h3 className="ttl">Total Beds: 20</h3>
-      <p className="bds">Occupied Beds: 18</p>
-      <p className="avbds">Avaliable Beds: 2</p>
-      <p className="avbds">{'oxygen left for : 2hr'}</p>
-    </div>
-  );
+let Card = (props) => {
+  let data;
+  if (!props.loader) {
+    data = props.hospitalData.map((val) => (
+      <div className="card">
+        <h3 className="ttl">Total Beds: {val.totalBeds}</h3>
+        <p className="bds">Occupied Beds: {val.occupiedBeds}</p>
+        <p className="avbds">Avaliable Beds: {val.avaliableBeds}</p>
+        <p className="avbds">oxygen left for : {val.oxy}</p>
+      </div>
+    ));
+  }
+  return <>{props.loader ? "loading..." : data}</>;
 };
 
 export default Card;

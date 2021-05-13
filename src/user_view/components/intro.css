@@ -16,3 +16,30 @@
   margin: 10px;
   border-radius: 5px;
 }
+
+
+
+@media (min-width: 1281px) {
+  /* CSS */
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .intro {
+    width: 80%;
+    height: 250px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+
+@media (min-width: 100px) and (max-width: 767px) {
+  .intro {
+    width: 80%;
+    height: 250px;
+  }
+}
