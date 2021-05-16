@@ -1,0 +1,23 @@
+.dashBdy {
+  width: 100%;
+  min-height: calc(100vh - 140px);
+  height: auto;
+  display: flex;
+}
+
+.dashInnerBdy {
+  width: calc(100vw - 140px);
+  background-color: #ffb703;
+}
+
+@media (min-width: 0px) and (max-width: 1024px) {
+  .dashInnerBdy {
+    width: 100%;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 1024px) and (orientation: landscape) {
+  .dashInnerBdy {
+    width: 100%;
+  }
+}

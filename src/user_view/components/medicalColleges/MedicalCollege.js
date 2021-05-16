@@ -7,6 +7,10 @@ import Footer from "../Footer";
 
 import "./MedicalColleges.css";
 
+import { Helmet } from "react-helmet";
+
+const TITLE = "Medical Collges";
+
 let MedicalColleges = (props) => {
   let [statesName, setStateNames] = useState();
   let [stateGetDetails, setstateGetDetails] = useState();
@@ -58,6 +62,9 @@ let MedicalColleges = (props) => {
 
   return (
     <div className="stateData">
+      <Helmet>
+        <title>{TITLE}</title>
+      </Helmet>
       <Navbar />
       {loader ? (
         <Loader />

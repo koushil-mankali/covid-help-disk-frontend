@@ -1,0 +1,62 @@
+.dashInnerBdy {
+  width: calc(100vw - 140px);
+  background-color: #ffb703;
+}
+
+.introBox {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hsptForm {
+  background-color: teal;
+  height: auto;
+  width: auto;
+  min-width: 80%;
+  padding: 10px;
+}
+.inptdiv {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.inpLabel {
+  margin: 10px 0;
+  font-size: 1.4rem;
+}
+
+.inptEle,
+.selectBox {
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #eee;
+  outline: none;
+}
+
+.submitBtn {
+  padding: 5px;
+  background-color: crimson;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+
+@media (min-width: 0px) and (max-width: 1024px) {
+  .dashInnerBdy {
+    width: 100%;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 1024px) and (orientation: landscape) {
+  .dashInnerBdy {
+    width: 100%;
+  }
+}

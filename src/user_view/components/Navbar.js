@@ -37,6 +37,11 @@ let Navbar = () => {
         >
           Medical Colleges
         </NavLink>
+        {sessionStorage.getItem("isLogin") ? (
+          <NavLink to="/logout" activeClassName="active" className="navbarLi">
+            Logout
+          </NavLink>
+        ) : null}
       </div>
     </div>
   );

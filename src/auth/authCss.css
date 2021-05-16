@@ -1,0 +1,92 @@
+.authBox {
+  width: 100%;
+  min-height: calc(100vh - 140px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1faee;
+}
+
+.authForm {
+  min-width: 320px;
+  width: auto;
+  height: auto;
+  background-color: cornsilk;
+  border: 2px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.formHeading {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.inputDiv {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.inpLabel {
+  margin: 5px 0;
+}
+.inputTag {
+  padding: 5px;
+  font-size: 1.1rem;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 5px;
+}
+
+.btnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.authBtn {
+  padding: 5px;
+  font-size: 1.1rem;
+  margin: 10px 0;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background-color: crimson;
+  color: #eee;
+  border: 1px solid #eee;
+}
+
+.altLinkDiv {
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.messageBoxSuccess {
+  width: auto;
+  min-height: 40px;
+  height: auto;
+  margin: 5px 0;
+  padding: 10px;
+  color: whitesmoke;
+  border-radius: 10px;
+  background-color: green;
+}
+
+.messageBoxFail {
+  width: auto;
+  min-height: 40px;
+  height: auto;
+  margin: 5px 0;
+  padding: 10px;
+  color: whitesmoke;
+  border-radius: 10px;
+  background-color: rgb(230, 7, 7);
+}

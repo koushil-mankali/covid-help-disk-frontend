@@ -7,6 +7,10 @@ import StatesData from "./StatesData";
 
 import "./Beds.css";
 
+import { Helmet } from "react-helmet";
+
+const TITLE = "Beds";
+
 let Beds = () => {
   let [state, setState] = useState();
   let [regional, setRegional] = useState();
@@ -37,6 +41,9 @@ let Beds = () => {
 
   return (
     <div className="beds">
+      <Helmet>
+        <title>{TITLE}</title>
+      </Helmet>
       <Navbar />
       <BedsStats loader={loader} state={state} />
       <StatesData regional={regional} loader={loader} />

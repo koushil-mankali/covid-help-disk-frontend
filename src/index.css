@@ -21,3 +21,30 @@ body {
 .m10 {
   margin: 10px;
 }
+
+.outerDiv {
+  width: 80%;
+  margin: auto;
+}
+
+.messageBoxSuccess {
+  width: auto;
+  min-height: 40px;
+  height: auto;
+  margin: 5px 0;
+  padding: 10px;
+  color: whitesmoke;
+  border-radius: 10px;
+  background-color: green;
+}
+
+.messageBoxFail {
+  width: auto;
+  min-height: 40px;
+  height: auto;
+  margin: 5px 0;
+  padding: 10px;
+  color: whitesmoke;
+  border-radius: 10px;
+  background-color: rgb(230, 7, 7);
+}

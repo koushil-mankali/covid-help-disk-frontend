@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import Navbar from "../Navbar";
 import Footer from "../Footer";
@@ -8,7 +8,12 @@ import Loader from "../../../UI/Loader";
 
 import "./HospitalList.css";
 
+import { Helmet } from "react-helmet";
+
+const TITLE = "Hospitals List";
+
 let HospitalList = (props) => {
+  const history = useHistory();
   const location = useLocation();
 
   let [data, setData] = useState();
@@ -16,6 +21,12 @@ let HospitalList = (props) => {
 
   let state = location?.data?.state;
   let district = location?.data?.district;
+
+  if (!state && !district) {
+    history.push({
+      pathname: "/",
+    });
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -91,6 +102,9 @@ let HospitalList = (props) => {
 
   return (
     <div className="main">
+      <Helmet>
+        <title>{TITLE}</title>
+      </Helmet>
       <Navbar />
       <div className="hospitalList">
         <p className="introTab">

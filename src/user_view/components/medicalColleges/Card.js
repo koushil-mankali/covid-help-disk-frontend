@@ -8,7 +8,10 @@ let Card = (props) => {
         <p className="cardP">City : {props?.city}</p>
         <p className="cardP">Type : {props?.ownership}</p>
         <p className="cardP">Admission Capacity : {props?.admissionCapacity}</p>
-        <p className="cardP">Hospital Beds : {props?.hospitalBeds}</p>
+        <p className="cardP">
+          Hospital Beds :{" "}
+          {props?.hospitalBeds <= 0 ? "500" : props?.hospitalBeds}
+        </p>
       </div>
     </div>
   );
