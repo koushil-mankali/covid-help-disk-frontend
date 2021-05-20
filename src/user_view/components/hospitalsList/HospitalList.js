@@ -30,7 +30,7 @@ let HospitalList = (props) => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:4000/get-hospital-data", {
+    fetch("https://chd.koushilmankali.com/get-hospital-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ let HospitalList = (props) => {
 
   let filterHandlerGovt = (e) => {
     setLoading(true);
-    fetch("http://localhost:4000/filter-data", {
+    fetch("https://chd.koushilmankali.com/filter-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ let HospitalList = (props) => {
 
   let filterHandlerPrivate = (e) => {
     setLoading(true);
-    fetch("http://localhost:4000/filter-data", {
+    fetch("https://chd.koushilmankali.com/filter-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

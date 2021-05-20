@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
@@ -24,7 +23,7 @@ let Login = () => {
 
   useEffect(() => {
     if (isLogin && token) {
-      fetch("http://localhost:4000/islogin", {
+      fetch("https://chd.koushilmankali.com/islogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +58,7 @@ let Login = () => {
   let formSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:4000/login", {
+    fetch("https://chd.koushilmankali.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,12 +70,19 @@ let Login = () => {
     })
       .then((result) => result.json())
       .then((result) => {
+        console.log("ress", result);
+        if (result.result === "valfail") {
+          return setMessage({
+            result: false,
+            message: result.errors[0].msg,
+          });
+        }
         if (result.result) {
           sessionStorage.setItem("token", result.token);
           sessionStorage.setItem("isLogin", result.isLogin);
           sessionStorage.setItem("email", result.email);
           return history.push({
-            pathname: "/",
+            pathname: "/dashboard",
           });
         }
         setMessage({
@@ -86,10 +92,10 @@ let Login = () => {
       })
       .catch((err) => {
         setMessage({
-          result: "fail",
+          result: false,
           message: "Failed Login",
         });
-        console.log(err);
+        console.log("err", err);
       });
   };
 

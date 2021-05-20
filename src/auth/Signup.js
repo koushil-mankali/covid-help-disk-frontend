@@ -21,7 +21,7 @@ let Signup = () => {
   let formSubmit = (e) => {
     e.preventDefault();
     console.log("clicked");
-    fetch("http://localhost:4000/signup", {
+    fetch("https://chd.koushilmankali.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,6 +36,12 @@ let Signup = () => {
     })
       .then((result) => result.json())
       .then((result) => {
+        if (result.result === "valfail") {
+          return setMessage({
+            result: false,
+            message: result.errors[0].msg,
+          });
+        }
         if (result.result) {
           setMessage({
             result: result.result,

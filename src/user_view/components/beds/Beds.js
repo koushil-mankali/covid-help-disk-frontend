@@ -21,7 +21,6 @@ let Beds = () => {
     fetch("https://api.rootnet.in/covid19-in/hospitals/beds")
       .then((result) => result.json())
       .then((result) => {
-        console.log(result);
         if (result.success) {
           let date = result.lastRefreshed;
           date = new Date(date);

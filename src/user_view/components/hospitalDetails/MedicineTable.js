@@ -11,10 +11,14 @@ let MedicineTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          <tr className="btab">
-            <td>Ramdisver</td>
-            <td>₹ 10</td>
-          </tr>
+          {props.hospitalData?.map((val) =>
+            val.medicineDetails.map((val) => (
+              <tr className="btab">
+                <td>{val.name}</td>
+                <td>₹ {val.price}</td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>

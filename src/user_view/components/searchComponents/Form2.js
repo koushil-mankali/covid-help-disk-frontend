@@ -21,7 +21,7 @@ let Form2 = (props) => {
   useEffect(() => {
     setLoading(true);
     if (state) {
-      fetch("http://localhost:4000/get-districts", {
+      fetch("https://chd.koushilmankali.com/get-districts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

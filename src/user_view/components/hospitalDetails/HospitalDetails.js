@@ -31,6 +31,8 @@ let HospitalDetails = () => {
     setLoader(false);
   }, [location]);
 
+
+
   return (
     <>
       <Helmet>
@@ -39,7 +41,7 @@ let HospitalDetails = () => {
       <Navbar />
       <IntroBox hospitalData={hospitalData} loader={loader} />
       <Card hospitalData={hospitalData} loader={loader} />
-      <MedicineTable />
+      <MedicineTable hospitalData={hospitalData} loader={loader}/>
       <div className="foo">
         <Footer />
       </div>

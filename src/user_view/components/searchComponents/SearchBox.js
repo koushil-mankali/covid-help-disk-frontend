@@ -13,7 +13,7 @@ let SearchBox = () => {
 
   useEffect(() => {
     setLoader(true);
-    fetch("http://localhost:4000/get-data")
+    fetch("https://chd.koushilmankali.com/get-data")
       .then((result) => result.json())
       .then((result) => {
         setHospitalData(result);
@@ -27,7 +27,7 @@ let SearchBox = () => {
 
   useEffect(() => {
     setLoader2(true);
-    fetch("http://localhost:4000/get-state")
+    fetch("https://chd.koushilmankali.com/get-state")
       .then((result) => result.json())
       .then((result) => {
         setStateNames(result);

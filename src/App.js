@@ -13,7 +13,7 @@ import Error from "./UI/Error";
 import Dashboard from "./hospital_dashboard/Dashboard";
 import HospitalInfo from "./hospital_dashboard/components/Hospitalnfo";
 import UpdateDeatils from "./hospital_dashboard/components/UpdateDetails";
-import AccountInfo from "./hospital_dashboard/components/AccountInfo";
+import UpdateHospitalDetails from "./hospital_dashboard/components/updateHospitalDetails";
 
 import "./App.css";
 
@@ -58,8 +58,8 @@ let App = () => {
         <Route path="/update-details" exact>
           <UpdateDeatils />
         </Route>
-        <Route path="/account-info" exact>
-          <AccountInfo />
+        <Route path="/update-hospital-details" exact>
+          <UpdateHospitalDetails />
         </Route>
 
         <Route>

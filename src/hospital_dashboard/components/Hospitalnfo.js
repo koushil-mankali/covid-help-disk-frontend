@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import Footer from "../../user_view/components/Footer";
@@ -11,6 +12,8 @@ import { Helmet } from "react-helmet";
 const TITLE = "HospitalInfo";
 
 let HospitalInfo = () => {
+  let history = useHistory();
+
   let [states, setStates] = useState();
   let [hospitalName, setHospitalName] = useState();
   let [districts, setDistricts] = useState();
@@ -19,12 +22,18 @@ let HospitalInfo = () => {
   let [resultData, setResultData] = useState();
 
   let email = sessionStorage.getItem("email");
+  let token = sessionStorage.getItem("token");
+
+  if (!token) {
+    history.push("/");
+  }
 
   useEffect(() => {
-    fetch("http://localhost:4000/get-hospital-name", {
+    fetch("https://chd.koushilmankali.com/get-hospital-name", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
       },
       body: JSON.stringify({
         userEmail: email,
@@ -32,12 +41,15 @@ let HospitalInfo = () => {
     })
       .then((result) => result.json())
       .then((result) => {
+        if (result.result === "failed") {
+          history.push("/");
+        }
         setHospitalName(result.hospitalName);
       });
   }, [email]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/get-states")
+    fetch("https://chd.koushilmankali.com/get-states")
       .then((result) => result.json())
       .then((result) => {
         setStates(result);
@@ -72,10 +84,11 @@ let HospitalInfo = () => {
 
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    fetch("http://localhost:4000/update-hospital-data", {
+    fetch("https://chd.koushilmankali.com/update-hospital-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
       },
       body: JSON.stringify({
         hospitalName: hospitalName,
@@ -83,7 +96,40 @@ let HospitalInfo = () => {
       }),
     })
       .then((result) => result.json())
-      .then((result) => setResultData(result))
+      .then((result) => {
+        if (result.result === "valfail") {
+          let message = result.errors[0].msg;
+          return setResultData({ result: false, mess: message });
+        }
+        if (result.result === "failed") {
+          history.push("/");
+        }
+        setResultData(result);
+      })
+      .catch((err) => console.log(err));
+
+    fetch("https://chd.koushilmankali.com/register-hospital-data", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify({
+        hospitalName: hospitalName,
+        formData: formData,
+      }),
+    })
+      .then((result) => result.json())
+      .then((result) => {
+        if (result.result === "valfail") {
+          let message = result.errors[0].msg;
+          return setResultData({ result: false, mess: message });
+        }
+        if (result.result === "failed") {
+          history.push("/");
+        }
+        setResultData(result);
+      })
       .catch((err) => console.log(err));
   };
 
@@ -199,8 +245,8 @@ let HospitalInfo = () => {
                   onChange={intBox}
                 >
                   <option>Select</option>
-                  <option value="Govt">Govt</option>
-                  <option value="Private">Private</option>
+                  <option value="govt">Govt</option>
+                  <option value="private">Private</option>
                 </select>
               </div>
               <div className="btnDiv">

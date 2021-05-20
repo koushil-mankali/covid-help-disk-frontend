@@ -6,6 +6,7 @@ import "./form.css";
 let Form1 = (props) => {
   const history = useHistory();
   let [hospitalName, setHospitalName] = useState("");
+  let [message, setMessage] = useState({});
 
   let handleChange = (e) => {
     setHospitalName(e.target.value);
@@ -15,7 +16,7 @@ let Form1 = (props) => {
     e.preventDefault();
 
     try {
-      fetch("http://localhost:4000/hospital-details", {
+      fetch("https://chd.koushilmankali.com/hospital-details", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -24,6 +25,12 @@ let Form1 = (props) => {
       })
         .then((result) => result.json())
         .then((result) => {
+          if (result.result === "valfail") {
+            return setMessage({
+              result: false,
+              message: result.errors[0].msg,
+            });
+          }
           history.push({
             pathname: "/hospital-details",
             state: { data: result },
@@ -34,8 +41,19 @@ let Form1 = (props) => {
     }
   };
 
+  let css;
+
+  if (message?.result) {
+    css = "messageBoxSuccess";
+  } else if (message?.result === false) {
+    css = "messageBoxFail";
+  } else {
+    css = null;
+  }
+
   return (
     <form onSubmit={hospitalNameHandler} className="form1">
+      <div className={css}>{message.message}</div>
       <div>
         <label htmlFor="hname">
           Hospital Name: &nbsp;&nbsp;

@@ -14,8 +14,11 @@ let Sidebar = (req, res) => {
       <Link className="sidebarEle" to="/update-details">
         Update Details
       </Link>
-      <Link className="sidebarEle" to="/account-info">
-        Account Info
+      <Link className="sidebarEle" to="/update-hospital-details">
+        Hospital Details
+      </Link>
+      <Link className="sidebarEle" to="/logout">
+        Logout
       </Link>
     </aside>
   );

@@ -10,6 +10,20 @@
   background-color: #ffb703;
 }
 
+.welcomeSign {
+  width: 80%;
+  min-height: 150px;
+  height: auto;
+  margin: 100px auto;
+  padding: 50px;
+  background-color: whitesmoke;
+  border: 2px solid wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
 @media (min-width: 0px) and (max-width: 1024px) {
   .dashInnerBdy {
     width: 100%;
