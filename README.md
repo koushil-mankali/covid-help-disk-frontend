@@ -1,4 +1,4 @@
-This is a node js project so you have to download covid-help-disk-nodejs which is avaliable here <a href='https://github.com/koushil-mankali/covid-help-disk-frontend'>Backend Part</a>
+This is a node js project so you have to download covid-help-disk-nodejs which is avaliable here <a href='https://github.com/koushil-mankali/covid-help-disk-nodejs'>Backend Part</a>
 
 <h1>Covid Help Disk Project</h1>
 
