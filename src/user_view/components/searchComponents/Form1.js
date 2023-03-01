@@ -16,7 +16,8 @@ let Form1 = (props) => {
     e.preventDefault();
 
     try {
-      fetch("https://chd.koushilmankali.com/hospital-details", {
+      // fetch("https://chd.koushilmankali.com/hospital-details", {
+      fetch("https://covidhd.onrender.com/hospital-details", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

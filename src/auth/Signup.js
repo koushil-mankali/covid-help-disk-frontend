@@ -21,7 +21,8 @@ let Signup = () => {
   let formSubmit = (e) => {
     e.preventDefault();
     console.log("clicked");
-    fetch("https://chd.koushilmankali.com/signup", {
+    // fetch("https://chd.koushilmankali.com/signup", {
+    fetch("https://covidhd.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

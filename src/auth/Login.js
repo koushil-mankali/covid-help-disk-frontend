@@ -23,7 +23,8 @@ let Login = () => {
 
   useEffect(() => {
     if (isLogin && token) {
-      fetch("https://chd.koushilmankali.com/islogin", {
+      // fetch("https://chd.koushilmankali.com/islogin", {
+      fetch("https://covidhd.onrender.com/islogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +59,8 @@ let Login = () => {
   let formSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://chd.koushilmankali.com/login", {
+    // fetch("https://chd.koushilmankali.com/login", {
+    fetch("https://covidhd.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

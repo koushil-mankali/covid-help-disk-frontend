@@ -4,7 +4,7 @@ let Footer = () => {
   return (
     <div className="footer">
       Developed with ❤️ in India by&nbsp;
-      <a href="https://www.koushilmankali.com" className="credits">
+      <a href="https://www.koushilmankali.in" className="credits">
         Koushil Mankali
       </a>
     </div>

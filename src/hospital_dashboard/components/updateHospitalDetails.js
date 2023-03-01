@@ -26,7 +26,8 @@ let UpdateHospitalDetails = () => {
   }
 
   useEffect(() => {
-    fetch("https://chd.koushilmankali.com/get-hospital-name", {
+    // fetch("https://chd.koushilmankali.com/get-hospital-name", {
+    fetch("https://covidhd.onrender.com/get-hospital-name", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +53,8 @@ let UpdateHospitalDetails = () => {
 
   useEffect(() => {
     if (hospitalName) {
-      fetch("https://chd.koushilmankali.com/get-hospital-stock-data", {
+      // fetch("https://chd.koushilmankali.com/get-hospital-stock-data", {
+      fetch("https://covidhd.onrender.com/get-hospital-stock-data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +83,8 @@ let UpdateHospitalDetails = () => {
   let formSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://chd.koushilmankali.com/update-hospital-stock-data", {
+    // fetch("https://chd.koushilmankali.com/update-hospital-stock-data", {
+    fetch("https://covidhd.onrender.com/update-hospital-stock-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

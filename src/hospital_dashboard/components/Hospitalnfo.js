@@ -29,7 +29,8 @@ let HospitalInfo = () => {
   }
 
   useEffect(() => {
-    fetch("https://chd.koushilmankali.com/get-hospital-name", {
+    // fetch("https://chd.koushilmankali.com/get-hospital-name", {
+    fetch("https://covidhd.onrender.com/get-hospital-name", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +50,8 @@ let HospitalInfo = () => {
   }, [email]);
 
   useEffect(() => {
-    fetch("https://chd.koushilmankali.com/get-states")
+    // fetch("https://chd.koushilmankali.com/get-states")
+    fetch("https://covidhd.onrender.com/get-states")
       .then((result) => result.json())
       .then((result) => {
         setStates(result);
@@ -84,7 +86,8 @@ let HospitalInfo = () => {
 
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    fetch("https://chd.koushilmankali.com/update-hospital-data", {
+    // fetch("https://chd.koushilmankali.com/update-hospital-data", {
+    fetch("https://covidhd.onrender.com/update-hospital-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +111,8 @@ let HospitalInfo = () => {
       })
       .catch((err) => console.log(err));
 
-    fetch("https://chd.koushilmankali.com/register-hospital-data", {
+    // fetch("https://chd.koushilmankali.com/register-hospital-data", {
+    fetch("https://covidhd.onrender.com/register-hospital-data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

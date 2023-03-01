@@ -13,7 +13,8 @@ let SearchBox = () => {
 
   useEffect(() => {
     setLoader(true);
-    fetch("https://chd.koushilmankali.com/get-data")
+    // fetch("https://chd.koushilmankali.com/get-data")
+    fetch("https://covidhd.onrender.com/get-data")
       .then((result) => result.json())
       .then((result) => {
         setHospitalData(result);
@@ -27,7 +28,8 @@ let SearchBox = () => {
 
   useEffect(() => {
     setLoader2(true);
-    fetch("https://chd.koushilmankali.com/get-state")
+    // fetch("https://chd.koushilmankali.com/get-state")
+    fetch("https://covidhd.onrender.com/get-state")
       .then((result) => result.json())
       .then((result) => {
         setStateNames(result);
